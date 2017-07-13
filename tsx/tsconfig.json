@@ -1,0 +1,19 @@
+{
+    "version": "2.4.0",
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "jsx": "react",
+        "module": "commonjs",
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitReturns": true,
+        "noUnusedLocals": true,
+        "outDir": "dist",
+        "sourceMap": true,
+        "strict": true,
+        "target": "es5"
+    },
+    "exclude": [
+        "node_modules/**/*.ts"
+    ]
+}

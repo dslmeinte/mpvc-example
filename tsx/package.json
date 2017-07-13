@@ -1,0 +1,35 @@
+{
+  "name": "mpvc-example",
+  "version": "0.0.1",
+  "description": "Example of the Model-Projection-View-Controller Pattern.",
+  "author": "Meinte Boersma",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://dslmeinte@github.com/dslmeinte/mpvc-example"
+  },
+  "dependencies": {
+    "lodash": "4.17.4",
+    "mobx": "3.2.1",
+    "mobx-react": "4.2.2",
+    "react": "15.6.1",
+    "react-dom": "15.6.1"
+  },
+  "devDependencies": {
+    "@types/react": "15.0.34",
+    "@types/react-dom": "0.14.23",
+    "@types/lodash": "4.14.68",
+    "browserify": "14.4.0",
+    "http-server": "0.10.0",
+    "tsify": "3.0.1",
+    "tslib": "1.7.1",
+    "typescript": "2.4.1",
+    "watchify": "3.9.0"
+  },
+  "scripts": {
+    "prestart": "npm run build",
+    "start": "http-server -p 9000 web",
+    "build": "browserify src/view/main.tsx -p [tsify] -o web/bundle.js",
+    "watch": "watchify src/view/main.tsx -p [tsify] -o web/bundle.js -v"
+  }
+}
