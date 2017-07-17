@@ -1,11 +1,11 @@
 import { observable } from 'mobx';
 
 import { Model, Point } from './model';
-import { Element, IProjection, ProjectedVertex, projectStore } from './projection';
+import { Element, ProjectedVertex, Projection, projectStore } from './projection';
 
 
 /**
- * Store === Model + View State
+ * Store === Directed Graph Model + View State
  */
 export class Store {
 
@@ -19,7 +19,7 @@ export class Store {
     @observable selection: Selection;
     @observable dragState: DragState;
 
-    get projection(): IProjection {
+    get projection(): Projection {
         return projectStore(this);
     }
 

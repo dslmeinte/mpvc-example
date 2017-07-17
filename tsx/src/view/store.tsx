@@ -26,7 +26,7 @@ export class StoreViewComponent extends React.Component<{ store: Store; controll
                             <path d="M0,0 L0,4 L6,2 z" fill="black" />
                         </marker>
                     </defs>
-                    {store.projection.elements.map((element, index) => <ElementViewComponent element={element} controller={controller} key={"" + index} />)}
+                    {store.projection.map((element, index) => <ElementViewComponent element={element} controller={controller} key={"" + index} />)}
                 </svg>
                 <button onClick={e => controller.createNew()}>Create new node</button>
                 <button onClick={e => controller.deleteSelection()} disabled={store.selection === undefined}>Delete selection</button>

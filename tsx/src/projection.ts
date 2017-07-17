@@ -9,6 +9,7 @@ export enum Style {
 }
 
 export abstract class Element {
+    constructor(protected readonly selection: Selection) {}
     abstract get style(): Style;
 }
 
@@ -18,8 +19,8 @@ export class ProjectedVertex extends Element {
     id: number;
     position: Point;
 
-    constructor(vertex: Vertex, private readonly selection: Selection) {
-        super();
+    constructor(vertex: Vertex, selection: Selection) {
+        super(selection);
         this.id = vertex.id;
         this.position = vertex.position;
     }
@@ -43,8 +44,8 @@ export class ProjectedVertex extends Element {
 
 export class Edge extends Element {
 
-    constructor(public readonly fromVertex: ProjectedVertex, public readonly toVertex: ProjectedVertex, private readonly selection: Selection) {
-        super();
+    constructor(public readonly fromVertex: ProjectedVertex, public readonly toVertex: ProjectedVertex, selection: Selection) {
+        super(selection);
     }
 
     equals = (other: Edge): boolean => this.fromVertex.id === other.fromVertex.id && this.toVertex.id === other.toVertex.id;
@@ -64,13 +65,10 @@ export class Edge extends Element {
 }
 
 
-export interface IProjection {
-    elements: Element[];
-    selection: Selection;
-}
+export type Projection = Element[];
 
 
-export function projectStore(store: Store): IProjection {
+export function projectStore(store: Store): Projection {
     const {selection, model} = store;
 
     const projectedVerticesMap: { [strVertexId: string]: ProjectedVertex } = {};
@@ -86,6 +84,6 @@ export function projectStore(store: Store): IProjection {
     const edges = flatMap(model.vertices, fromVertex =>
         fromVertex.toIds.map(toId => new Edge(projectVertex(fromVertex), projectVertex(model.vertexById(toId)!), selection))
     );
-    return { elements: [...projectedVertices, ...edges], selection };
+    return [...projectedVertices, ...edges];
 }
 
