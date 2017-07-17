@@ -1,6 +1,6 @@
 # README
 
-This repository holds all the source for the example used in my [MPVC Pattern blog](...).
+This repository holds all the source for the example used in my [MPVC Pattern blog](https://medium.com/@dslmeinte/the-mpvc-pattern-c1df8a027400), reproduced [here](./MPVC-blog-text.md).
 Two implementations are provided: one in TypeScript (using TSX, under `tsx/`) as well as one in the [Elm language](http://elm-lang.org/) (under `elm`)
     - note that the latter is still under construction.
 
