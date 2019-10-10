@@ -23,7 +23,7 @@
     "http-server": "0.10.0",
     "tsify": "3.0.1",
     "tslib": "1.7.1",
-    "typescript": "2.4.1",
+    "typescript": "3.6.4",
     "watchify": "3.9.0"
   },
   "scripts": {
