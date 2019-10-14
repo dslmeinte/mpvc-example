@@ -22,7 +22,7 @@
     "browserify": "14.4.0",
     "http-server": "0.10.0",
     "tsify": "3.0.1",
-    "tslib": "1.7.1",
+    "tslib": "1.10.0",
     "typescript": "3.6.4",
     "watchify": "3.9.0"
   },
