@@ -24,7 +24,7 @@
     "tsify": "3.0.1",
     "tslib": "1.7.1",
     "typescript": "3.6.4",
-    "watchify": "3.9.0"
+    "watchify": "3.11.1"
   },
   "scripts": {
     "prestart": "npm run build",
