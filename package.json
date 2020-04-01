@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@types/react": "16.9.29",
-    "@types/react-dom": "16.9.5",
+    "@types/react-dom": "16.9.6",
     "@types/lodash": "4.14.149",
     "browserify": "16.5.1",
     "http-server": "0.12.1",
